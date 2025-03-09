@@ -12,5 +12,4 @@ class GreetingsService {
     fun retrieveGreeting(name: String): String {
         return "$name, $message"
     }
-
 }
