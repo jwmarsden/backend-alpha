@@ -28,10 +28,17 @@ dependencies {
     // logging
     implementation("io.github.microutils:kotlin-logging-jvm:3.0.5")
 
-    testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
 
+    testImplementation("io.mockk:mockk:1.13.17")
+    testImplementation("com.ninja-squad:springmockk:4.0.2")
+    testImplementation("org.springframework.boot:spring-boot-starter-test") {
+        exclude(module = "mockito-core")
+    }
+
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+
+
 }
 
 kotlin {
