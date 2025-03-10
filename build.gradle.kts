@@ -19,23 +19,29 @@ repositories {
 }
 
 dependencies {
+    // Web
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-webflux")
 
+    // Kotlin
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
 
-    // logging
+    // Logging
     implementation("io.github.microutils:kotlin-logging-jvm:3.0.5")
 
-    testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
+    // Db
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+    runtimeOnly("com.h2database:h2")
 
+    // Testing
+    testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
+    // Testing - Mockk
     testImplementation("io.mockk:mockk:1.13.17")
     testImplementation("com.ninja-squad:springmockk:4.0.2")
-    testImplementation("org.springframework.boot:spring-boot-starter-test") {
-        exclude(module = "mockito-core")
-    }
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
 
+    // Testing
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 
 

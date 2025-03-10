@@ -1,1 +1,17 @@
 curl -i http://localhost:8080/v1/greetings/JWM
+
+
+curl -i http://localhost:8080/v1/asset/version
+
+curl -i \
+-d '{"id":null,"assetId":"A001","description":"Test Asset A001"}' \
+-H "Content-Type: application/json" \
+-X POST http://localhost:8080/v1/asset
+
+curl -i \
+-d '{"assetId":"A002","description":"Test Asset A002"}' \
+-H "Content-Type: application/json" \
+-X POST http://localhost:8080/v1/asset
+
+
+http://localhost:8080/h2-console/login
